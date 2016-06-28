@@ -1,5 +1,3 @@
-/* globals chrome:true, udacityNotifyReviewer:true */
-
 (function() {
   'use strict';
 
@@ -30,7 +28,7 @@
   }
 
   function update() {
-    udacityNotifyReviewer(function(data) {
+    window.udacityNotifyReviewer(function(data) {
       if (typeof data === 'number') {
         var opt = {
           type: 'basic',

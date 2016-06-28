@@ -1,13 +1,42 @@
 (function() {
   'use strict';
 
-  var TOKEN = 'YOUR_TOKEN'; // localStorage.udacityReviewDevToken
+  window.Udacity = function() {
+    var defaults = {
+      rootUrl: 'https://review-api.udacity.com/api/v1/me/',
+      oauthToken: '',
+      languages: ['pt-br', 'en-us'],
+      interval: 1 // minute
+    };
 
-  var ROOT_URL = 'https://review-api.udacity.com/api/v1/me/';
+    var api = {
+      settings: {
+        get: function(name) {
+          var item = localStorage.getItem(name);
 
-  var LANGUAGES = ['pt-br', 'en-us']; // 'zh-cn'
+          if (item === null) {
+            return {}.hasOwnProperty.call(defaults, name) ? defaults[name] : undefined;
+          }
+
+          if (item === 'true' || item === 'false') {
+            return item === 'true';
+          }
+
+          return item;
+        },
+        set: localStorage.setItem.bind(localStorage),
+        remove: localStorage.removeItem.bind(localStorage),
+        reset: localStorage.clear.bind(localStorage)
+      }
+    };
+
+    api.defaults = defaults;
+
+    return api;
+  }();
 
   var xhr = function() {
+    var token = window.Udacity.settings.get('oauthToken');
     var xhr = new XMLHttpRequest();
 
     return function(method, url, callback) {
@@ -20,13 +49,16 @@
         }
       };
       xhr.open(method, url);
-      xhr.setRequestHeader('Authorization', TOKEN);
+      xhr.setRequestHeader('Authorization', token);
       xhr.send();
     };
   }();
 
   window.udacityNotifyReviewer = function(callback) {
-    xhr('GET', ROOT_URL + 'certifications.json', function(data) {
+    var rootUrl = window.Udacity.settings.get('rootUrl');
+    var languages = window.Udacity.settings.get('languages');
+
+    xhr('GET', rootUrl + 'certifications.json', function(data) {
       var certifications = JSON.parse(data);
       var reviewAwaiting = 0;
 
@@ -37,7 +69,7 @@
             var languageReviewsCount = certification.project.awaiting_review_count_by_language;
 
             if (languageReviewsCount) {
-              LANGUAGES.map(function(language) {
+              languages.map(function(language) {
                 if (language in languageReviewsCount) {
                   reviewAwaiting += languageReviewsCount[language];
                 }

@@ -1,22 +1,24 @@
 (function() {
   'use strict';
 
-  function loadOptions() {
-    var devToken = localStorage.udacityReviewDevToken;
-    if (typeof devToken === "undefined") {
-      devToken = '';
+  document.addEventListener('DOMContentLoaded', function() {
+    var formRootUrl = document.getElementById('root-url');
+
+
+
+    function normalizeRoot(url) {
+      if (!/^https?:\/\//.test(url)) {
+        // assume it is https
+        url = `https://${url}`;
+      }
+
+      if (!/\/$/.test(url)) {
+        url += '/';
+      }
+
+      return url;
     }
-    document.getElementById("dev-token").value = devToken;
-  }
 
-  function saveOptions() {
-    var devToken = document.getElementById("dev-token").value;
-    localStorage.udacityReviewDevToken = devToken;
-  }
-
-  window.addEventListener('load', function () {
-    loadOptions();
-    document.getElementById("save-btn").addEventListener("click", saveOptions);
-  }, false );
-
+    console.log(formRootUrl.value);
+  });
 })();
