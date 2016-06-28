@@ -3,6 +3,20 @@
 (function() {
   'use strict';
 
+  function render(badge, color, title) {
+    chrome.browserAction.setBadgeText({
+      text: badge
+    });
+
+    chrome.browserAction.setBadgeBackgroundColor({
+      color: color
+    });
+
+    chrome.browserAction.setTitle({
+      title: title
+    });
+  }
+
   function update(argument) {
     udacityNotifyReviewer();
   }
