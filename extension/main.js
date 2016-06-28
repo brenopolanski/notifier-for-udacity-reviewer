@@ -3,18 +3,15 @@
 (function() {
   'use strict';
 
-  function render(badge, color, title) {
-    chrome.browserAction.setBadgeText({
-      text: badge
-    });
+  var COLORS = {
+    success: [65, 131, 196, 255],
+    danger: [166, 41, 41, 255]
+  };
 
-    chrome.browserAction.setBadgeBackgroundColor({
-      color: color
-    });
-
-    chrome.browserAction.setTitle({
-      title: title
-    });
+  function render(text, color, title) {
+    chrome.browserAction.setBadgeText({ text });
+    chrome.browserAction.setBadgeBackgroundColor({ color });
+    chrome.browserAction.setTitle({ title });
   }
 
   function handleCount(count) {
@@ -28,13 +25,13 @@
     return String(count);
   }
 
-  function update(argument) {
-    udacityNotifyReviewer(function(count) {
-      if (count !== false) {
-        render(handleCount(count), [65, 131, 196, 255], 'Project(s) available for review');
+  function update() {
+    udacityNotifyReviewer(function(data) {
+      if (typeof data === 'number') {
+        render(handleCount(data), COLORS.success, 'Project(s) available for review');
       }
       else {
-        render(':(', [166, 41, 41, 255], 'You have to be connected to the internet and logged into Udacity');
+        render(':(', COLORS.danger, data);
       }
     });
   }

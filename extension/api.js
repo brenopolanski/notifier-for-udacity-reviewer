@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var TOKEN = localStorage.udacityReviewDevToken;
+  var TOKEN = 'YOUR_TOKEN'; // localStorage.udacityReviewDevToken
 
   var BASE_URL = 'https://review-api.udacity.com/api/v1/me/';
 
@@ -12,7 +12,10 @@
 
     return function(method, url, callback) {
       xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          callback(xhr.responseText);
+        }
+        else {
           callback(xhr.responseText);
         }
       };
@@ -27,26 +30,26 @@
       var certifications = JSON.parse(data);
       var reviewAwaiting = 0;
 
-      certifications.map(function(certification) {
-        // Check if is certified (required to review projects)
-        if (certification.certified_at) {
-          var languageReviewsCount = certification.project.awaiting_review_count_by_language;
+      if (!certifications.hasOwnProperty('error')) {
+        certifications.map(function(certification) {
+          // Check if is certified (required to review projects)
+          if (certification.certified_at) {
+            var languageReviewsCount = certification.project.awaiting_review_count_by_language;
 
-          if (languageReviewsCount) {
-            LANGUAGES.map(function(language) {
-              if (language in languageReviewsCount) {
-                reviewAwaiting += languageReviewsCount[language];
-              }
-            });
+            if (languageReviewsCount) {
+              LANGUAGES.map(function(language) {
+                if (language in languageReviewsCount) {
+                  reviewAwaiting += languageReviewsCount[language];
+                }
+              });
+            }
           }
-        }
-      });
+        });
 
-      if (reviewAwaiting) {
         callback(reviewAwaiting);
       }
       else {
-        callback(false);
+        callback(certifications.error);
       }
     });
   };
