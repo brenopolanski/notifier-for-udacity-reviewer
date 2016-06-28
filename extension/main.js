@@ -17,10 +17,21 @@
     });
   }
 
+  function handleCount(count) {
+    if (count === 0) {
+      return '';
+    }
+    else if (count > 9999) {
+      return '∞';
+    }
+
+    return String(count);
+  }
+
   function update(argument) {
-    udacityNotifyReviewer(function(hasProjectReview) {
-      if (hasProjectReview) {
-        render('1', [65, 131, 196, 255], 'Project(s) available for review');
+    udacityNotifyReviewer(function(count) {
+      if (count !== false) {
+        render(handleCount(count), [65, 131, 196, 255], 'Project(s) available for review');
       }
       else {
         render(':(', [166, 41, 41, 255], 'You have to be connected to the internet and logged into Udacity');
