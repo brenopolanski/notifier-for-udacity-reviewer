@@ -1,0 +1,28 @@
+{
+  "name": "Udacity Project Reviewer Notifier",
+  "version": "0.1.0",
+  "description": "Displays projects for review",
+  "homepage_url": "https://github.com/brenopolanski/notifier-for-udacity-reviewer-chrome",
+  "manifest_version": 2,
+  "minimum_chrome_version": "46",
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "api.js",
+      "main.js"
+    ]
+  },
+  "permissions": [
+    "alarms",
+    "tabs",
+    "https://review.udacity.com/"
+  ],
+  "browser_action": {
+    "default_icon": "icon-20.png"
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}
