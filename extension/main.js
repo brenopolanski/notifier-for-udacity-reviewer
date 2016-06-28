@@ -13,7 +13,9 @@
   }
 
   function notification(opt) {
-    chrome.notifications.create(opt);
+    if (window.Udacity.settings.get('showDesktopNotif')) {
+      chrome.notifications.create(opt);
+    }
   }
 
   function handleCount(count) {

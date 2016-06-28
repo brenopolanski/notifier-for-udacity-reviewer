@@ -5,7 +5,7 @@
     var defaults = {
       rootUrl: 'https://review-api.udacity.com/api/v1/me/',
       oauthToken: '',
-      languages: ['pt-br', 'en-us'],
+      languages: ['pt-br', 'en-us'], // zh-cn
       interval: 1 // Minute
     };
 
@@ -59,6 +59,8 @@
   window.udacityNotifyReviewer = function(callback) {
     var rootUrl = window.Udacity.settings.get('rootUrl');
     var languages = window.Udacity.settings.get('languages');
+
+    languages = languages.split(',');
 
     xhr('GET', rootUrl + 'certifications.json', function(data) {
       var certifications = JSON.parse(data);

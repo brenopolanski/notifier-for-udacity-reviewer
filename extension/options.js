@@ -25,16 +25,32 @@
       return result;
     }
 
+    function setSelectValues(data) {
+      if (typeof data === 'string') {
+        data = data.split(',');
+      }
+
+      for (var i = 0, iLen = data.length; i < iLen; i++ ) {
+        for (var j = 0, jLen = formLanguages.options.length; j < jLen; j++) {
+          if (formLanguages.options[j].value === data[i]) {
+            formLanguages.options[j].selected = true;
+          }
+        }
+      }
+    }
+
     function loadSettings() {
       formRootUrl.value = window.Udacity.settings.get('rootUrl');
       formOauthToken.value = window.Udacity.settings.get('oauthToken');
       formCheckIntervals.value = window.Udacity.settings.get('interval');
       formShowDesktopNotif.checked = window.Udacity.settings.get('showDesktopNotif');
 
-      console.log(formRootUrl.value);
-      console.log(formOauthToken.value);
-      console.log(formCheckIntervals.value);
-      console.log(formShowDesktopNotif.checked);
+      setSelectValues(window.Udacity.settings.get('languages'));
+
+      // console.log(formRootUrl.value);
+      // console.log(formOauthToken.value);
+      // console.log(formCheckIntervals.value);
+      // console.log(formShowDesktopNotif.checked);
     }
 
     loadSettings();
@@ -78,6 +94,14 @@
     formCheckIntervals.addEventListener('change', function() {
       window.Udacity.settings.set('interval', formCheckIntervals.value);
       updateBadge();
+    });
+
+    formLanguages.addEventListener('change', function() {
+      var languages = getSelectValues(formLanguages);
+
+      window.Udacity.settings.set('languages', languages);
+      updateBadge();
+      setSelectValues(languages);
     });
 
     formShowDesktopNotif.addEventListener('change', function() {
