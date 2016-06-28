@@ -14,6 +14,10 @@
     chrome.browserAction.setTitle({ title });
   }
 
+  function notification(opt) {
+    chrome.notifications.create(opt);
+  }
+
   function handleCount(count) {
     if (count === 0) {
       return '';
@@ -28,7 +32,18 @@
   function update() {
     udacityNotifyReviewer(function(data) {
       if (typeof data === 'number') {
-        render(handleCount(data), COLORS.success, 'Project(s) available for review');
+        var opt = {
+          type: 'basic',
+          title: 'Udacity Project Reviewer',
+          message: 'You Have ' + handleCount(data) + ' Projects available for review!',
+          iconUrl: 'images/icon-128.png'
+        };
+
+        if (data && data !== 0) {
+          notification(opt);
+        }
+
+        render(handleCount(data), COLORS.success, 'Projects available for review');
       }
       else {
         render(':(', COLORS.danger, data);
