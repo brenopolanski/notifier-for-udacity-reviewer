@@ -22,7 +22,9 @@
 
   window.udacityNotifyReviewer = function(callback) {
     xhr('GET', BASE_URL + 'certifications.json', function(data) {
-      console.log(data);
+      // console.log(data);
+
+      callback(true);
     });
   };
 })();
