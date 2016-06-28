@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var TOKEN = 'YOUR_TOKEN';
+  var TOKEN = localStorage.udacityReviewDevToken;
 
   var BASE_URL = 'https://review-api.udacity.com/api/v1/me/';
 
@@ -17,7 +17,7 @@
         }
       };
       xhr.open(method, url);
-      xhr.setRequestHeader('authorization', TOKEN);
+      xhr.setRequestHeader('Authorization', TOKEN);
       xhr.send();
     };
   }();
