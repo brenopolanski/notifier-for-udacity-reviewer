@@ -51,10 +51,20 @@
 
   chrome.alarms.create({ periodInMinutes: 1 });
   chrome.alarms.onAlarm.addListener(update);
+  chrome.runtime.onMessage.addListener(update);
+
+  // Launch options page on first run
+  chrome.runtime.onInstalled.addListener(function (details) {
+    if (details.reason === 'install') {
+      chrome.runtime.openOptionsPage();
+    }
+  });
 
   chrome.browserAction.onClicked.addListener(function() {
     chrome.tabs.create({
       url: 'https://review.udacity.com/#!/submissions/dashboard'
     });
   });
+
+  update();
 })();
