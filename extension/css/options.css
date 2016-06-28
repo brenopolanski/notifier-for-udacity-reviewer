@@ -40,6 +40,10 @@ body {
   text-shadow: #fdf2e4 0 1px 0;
 }
 
+.form-title {
+  font-size: 12px;
+}
+
 .submit-container {
   text-align: right;
 }
