@@ -3,7 +3,7 @@
 
   var TOKEN = 'YOUR_TOKEN'; // localStorage.udacityReviewDevToken
 
-  var BASE_URL = 'https://review-api.udacity.com/api/v1/me/';
+  var ROOT_URL = 'https://review-api.udacity.com/api/v1/me/';
 
   var LANGUAGES = ['pt-br', 'en-us']; // 'zh-cn'
 
@@ -26,7 +26,7 @@
   }();
 
   window.udacityNotifyReviewer = function(callback) {
-    xhr('GET', BASE_URL + 'certifications.json', function(data) {
+    xhr('GET', ROOT_URL + 'certifications.json', function(data) {
       var certifications = JSON.parse(data);
       var reviewAwaiting = 0;
 

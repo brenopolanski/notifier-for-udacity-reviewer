@@ -1,19 +1,62 @@
-<html>
-<head>
-  <title>Options for Udacity Project Reviewer Notifier</title>
-  <script type="text/javascript" src="options.js"></script>
-  <link rel="stylesheet" href="css/options.css">
-</head>
-<body>
-  <form class="options-form">
-    <h2 class="page-title">Udacity Project Review Notifier</h2>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Notifier for Udacity Reviewer</title>
+    <link rel="stylesheet" href="css/options.css">
+    <script src="options.js"></script>
+  </head>
+  <body>
+    <section>
+      <h3>Custom URL</h3>
+      <label for="root-url">Root URL</label>
+      <input type="text" id="root-url" value="https://review-api.udacity.com/api/v1/me/" placeholder="e.g. https://review-api.udacity.com/api/v1/me/" autofocus>
+      <span class="description">Specify the root URL to the Udacity API.</span>
+    </section>
 
-    <label for="dev-token" class="form-title">API Token:</p>
-    <textarea class="form-field" name="dev-token" id="dev-token"></textarea>
-    <br />
-    <div class="submit-container">
-      <input class="submit-button" type="button" id="save-btn" value="Save" />
-    </div>
-  </form>
-</body>
+    <section>
+      <h3>API access</h3>
+      <label for="oauth-token">Token</label>
+      <textarea rows="5" id="oauth-token"></textarea>
+      <span class="description">For get your token, you need open this page <a href="https://review.udacity.com/#!/submissions/dashboard" target="_blank">Reviewer Dashboard</a> and click in <strong>API Access</strong>.</span>
+    </section>
+
+    <section>
+      <h3>Check Intervals</h3>
+      <select id="check intervals">
+        <option value="1" selected>1 Minute</option>
+        <option value="2">2 Minutes</option>
+        <option value="3">3 Minutes</option>
+        <option value="4">4 Minutes</option>
+        <option value="5">5 Minutes</option>
+        <option value="6">6 Minutes</option>
+        <option value="7">7 Minutes</option>
+        <option value="8">8 Minutes</option>
+        <option value="9">9 Minutes</option>
+        <option value="10">10 Minutes</option>
+        <option value="20">20 Minutes</option>
+        <option value="30">30 Minutes</option>
+        <option value="40">40 Minutes</option>
+        <option value="50">50 Minutes</option>
+        <option value="60">1 Hour</option>
+      </select>
+      <span class="description">Time interval for request API.</span>
+    </section>
+
+    <section>
+      <h3>Languages</h3>
+      <select id="languages" multiple>
+        <option value="pt-br" selected>Brazil</option>
+        <option value="zh-cn">Chinese</option>
+        <option value="en-us" selected>English</option>
+      </select>
+      <span class="description">Languages for review.</span>
+    </section>
+
+    <section>
+      <h3>Desktop Notifications</h3>
+      <input type="checkbox" id="show-desktop-notif">
+      <label for="show-desktop-notif">Show desktop notifications</label>
+    </section>
+  </body>
 </html>
