@@ -36,10 +36,12 @@
   }();
 
   var xhr = function() {
-    var token = window.Udacity.settings.get('oauthToken');
     var xhr = new XMLHttpRequest();
+    var token = window.Udacity.settings.get('oauthToken');
 
     return function(method, url, callback) {
+      token = window.Udacity.settings.get('oauthToken');
+
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           callback(xhr.responseText);

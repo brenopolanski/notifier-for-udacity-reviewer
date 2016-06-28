@@ -49,7 +49,7 @@
     });
   }
 
-  chrome.alarms.create({ periodInMinutes: 1 });
+  chrome.alarms.create({ periodInMinutes: parseInt(window.Udacity.settings.get('interval')) });
   chrome.alarms.onAlarm.addListener(update);
   chrome.runtime.onMessage.addListener(update);
 

@@ -27,9 +27,14 @@
 
     function loadSettings() {
       formRootUrl.value = window.Udacity.settings.get('rootUrl');
-      formOauthToken.text = window.Udacity.settings.get('oauthToken');
+      formOauthToken.value = window.Udacity.settings.get('oauthToken');
       formCheckIntervals.value = window.Udacity.settings.get('interval');
       formShowDesktopNotif.checked = window.Udacity.settings.get('showDesktopNotif');
+
+      console.log(formRootUrl.value);
+      console.log(formOauthToken.value);
+      console.log(formCheckIntervals.value);
+      console.log(formShowDesktopNotif.checked);
     }
 
     loadSettings();
@@ -50,5 +55,34 @@
 
       return url;
     }
+
+    formRootUrl.addEventListener('change', function() {
+      var url = normalizeRoot(formRootUrl.value);
+
+      // Case of url is empty: set to default
+      if (url === normalizeRoot('')) {
+        window.Udacity.settings.remove('rootUrl');
+        url = window.Udacity.settings.get('rootUrl');
+      }
+
+      window.Udacity.settings.set('rootUrl', url);
+      updateBadge();
+      loadSettings();
+    });
+
+    formOauthToken.addEventListener('change', function() {
+      window.Udacity.settings.set('oauthToken', formOauthToken.value);
+      updateBadge();
+    });
+
+    formCheckIntervals.addEventListener('change', function() {
+      window.Udacity.settings.set('interval', formCheckIntervals.value);
+      updateBadge();
+    });
+
+    formShowDesktopNotif.addEventListener('change', function() {
+      window.Udacity.settings.set('showDesktopNotif', formShowDesktopNotif.checked);
+      updateBadge();
+    });
   });
 })();
