@@ -41,15 +41,17 @@
     var xhr = new XMLHttpRequest();
     var token = window.Udacity.settings.get('oauthToken');
 
-    return function(method, url, callback) {
+    return function(method, url, doneCallback, incompleteCallback) {
       token = window.Udacity.settings.get('oauthToken');
 
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          callback(xhr.responseText);
+          doneCallback(xhr.responseText);
         }
         else {
-          callback(xhr.responseText);
+          if (typeof incompleteCallback === 'function') {
+            incompleteCallback(xhr.responseText);
+          }
         }
       };
       xhr.open(method, url);
@@ -62,7 +64,9 @@
     var rootUrl = window.Udacity.settings.get('rootUrl');
     var languages = window.Udacity.settings.get('languages');
 
-    languages = languages.split(',');
+    if (typeof languages === "string") {
+      languages = languages.split(',');
+    }
 
     xhr('GET', rootUrl + 'certifications.json', function(data) {
       var certifications = JSON.parse(data);
