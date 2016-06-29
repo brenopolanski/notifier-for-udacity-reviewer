@@ -1,4 +1,6 @@
-# Udacity Project Reviewer Notifier - Chrome Extension
+# Udacity Project Reviewer Notifier
+
+> Chrome Extension
 
 ## Install
 
