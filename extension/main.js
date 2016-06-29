@@ -48,10 +48,10 @@
 
         if (data && data !== 0) {
           notification(opt);
-        }
 
-        if (window.Udacity.settings.get('showDesktopRing')) {
-          RING.play();
+          if (window.Udacity.settings.get('showDesktopRing')) {
+            RING.play();
+          }
         }
 
         render(handleCount(data), COLORS.success, 'Projects available for review');
