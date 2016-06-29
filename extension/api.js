@@ -64,7 +64,7 @@
     var rootUrl = window.Udacity.settings.get('rootUrl');
     var languages = window.Udacity.settings.get('languages');
 
-    if (typeof languages === "string") {
+    if (typeof languages === 'string') {
       languages = languages.split(',');
     }
 
