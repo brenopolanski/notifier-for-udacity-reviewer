@@ -7,6 +7,12 @@
 	<img src="https://raw.githubusercontent.com/brenopolanski/notifier-for-udacity-reviewer-chrome/master/demo2.png" />
 </p>
 
+## Desktop notifications
+
+![demo3](https://raw.githubusercontent.com/brenopolanski/notifier-for-udacity-reviewer-chrome/master/demo1.png)
+
+The extension checks for new notifications every minute, and displays notifications that arrived after the last check if there are any. Clicking on the notification opens it on [Udacity Dashboard](https://review.udacity.com/#!/submissions/dashboard).
+
 ## Install
 
 1. Clone or [download](https://github.com/brenopolanski/notifier-for-udacity-reviewer-chrome/archive/master.zip) project;
