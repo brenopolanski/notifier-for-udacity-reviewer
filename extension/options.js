@@ -7,6 +7,7 @@
     var formCheckIntervals = document.getElementById('check-intervals');
     var formLanguages = document.getElementById('languages');
     var formShowDesktopNotif = document.getElementById('show-desktop-notif');
+    var formShowDesktopRing = document.getElementById('show-desktop-ring');
 
     function getSelectValues(select) {
       var options = select && select.options;
@@ -44,6 +45,7 @@
       formOauthToken.value = window.Udacity.settings.get('oauthToken');
       formCheckIntervals.value = window.Udacity.settings.get('interval');
       formShowDesktopNotif.checked = window.Udacity.settings.get('showDesktopNotif');
+      formShowDesktopRing.checked = window.Udacity.settings.get('showDesktopRing');
 
       setSelectValues(window.Udacity.settings.get('languages'));
 
@@ -51,6 +53,7 @@
       // console.log(formOauthToken.value);
       // console.log(formCheckIntervals.value);
       // console.log(formShowDesktopNotif.checked);
+      // console.log(formShowDesktopRing.checked);
     }
 
     loadSettings();
@@ -62,7 +65,7 @@
     function normalizeRoot(url) {
       if (!/^https?:\/\//.test(url)) {
         // Assume it is https
-        url = `https://${url}`;
+        url = 'https://' + url;
       }
 
       if (!/\/$/.test(url)) {
@@ -106,6 +109,11 @@
 
     formShowDesktopNotif.addEventListener('change', function() {
       window.Udacity.settings.set('showDesktopNotif', formShowDesktopNotif.checked);
+      updateBadge();
+    });
+
+    formShowDesktopRing.addEventListener('change', function() {
+      window.Udacity.settings.set('showDesktopRing', formShowDesktopRing.checked);
       updateBadge();
     });
   });

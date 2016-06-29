@@ -6,7 +6,9 @@
       rootUrl: 'https://review-api.udacity.com/api/v1/me/',
       oauthToken: '',
       languages: ['pt-br', 'en-us'], // zh-cn
-      interval: 1 // Minute
+      interval: 1, // Minute,
+      showDesktopNotif: false,
+      showDesktopRing: false
     };
 
     var api = {

@@ -6,6 +6,13 @@
     danger: [166, 41, 41, 255]
   };
 
+  var RING = new Audio('sounds/ring.ogg');
+
+  function loadRing() {
+    // RING.onload = function() {};
+    RING.load();
+  }
+
   function render(text, color, title) {
     chrome.browserAction.setBadgeText({ text });
     chrome.browserAction.setBadgeBackgroundColor({ color });
@@ -43,6 +50,10 @@
           notification(opt);
         }
 
+        if (window.Udacity.settings.get('showDesktopRing')) {
+          RING.play();
+        }
+
         render(handleCount(data), COLORS.success, 'Projects available for review');
       }
       else {
@@ -67,6 +78,8 @@
       url: 'https://review.udacity.com/#!/submissions/dashboard'
     });
   });
+
+  loadRing();
 
   update();
 })();
