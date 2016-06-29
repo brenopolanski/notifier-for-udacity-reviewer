@@ -2,6 +2,11 @@
 
 > Chrome Extension
 
+<p align="center">
+	<img src="https://raw.githubusercontent.com/brenopolanski/notifier-for-udacity-reviewer-chrome/master/demo1.png" />
+	<img src="https://raw.githubusercontent.com/brenopolanski/notifier-for-udacity-reviewer-chrome/master/demo2.png" />
+</p>
+
 ## Install
 
 1. Clone or [download](https://github.com/brenopolanski/notifier-for-udacity-reviewer-chrome/archive/master.zip) project;
