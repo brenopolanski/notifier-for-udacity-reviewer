@@ -21,6 +21,12 @@ The extension checks for new notifications every minute, and displays notificati
 4. Click Tools > Extensions > set the mode option Developer;
 5. Click in Load unpacked extension.
 
+## Languages for review
+
+* :cn: Chinese
+* :uk: English
+* Portuguese (pt-br)
+
 ## Contributing
 
 If you want to help, please read the [Contributing](https://github.com/brenopolanski/notifier-for-udacity-reviewer-chrome/blob/master/CONTRIBUTING.md) guide.
@@ -29,13 +35,13 @@ If you want to help, please read the [Contributing](https://github.com/brenopola
 
 For detailed changelog, see [Releases](https://github.com/brenopolanski/notifier-for-udacity-reviewer-chrome/releases).
 
-## Maintainers
+## Team
 
-* [@adrielcafe](https://github.com/adrielcafe) (Adriel Café)
-* [@brenopolanski](https://github.com/brenopolanski) (Breno Polanski)
-* [@jeandersonbc](https://github.com/jeandersonbc) (Jeanderson Barros Candido)
-* [@raafaelima](https://github.com/raafaelima) (Rafael Lima)
-* [@saulotoledo](https://github.com/saulotoledo) (Saulo S. Toledo)
+Udacity Project Reviewer Notifier was made with love by these guys.
+
+[![Adriel Café](https://avatars0.githubusercontent.com/u/2512298?v=3&s=70)](https://github.com/adrielcafe) | [![Breno Polanski](https://avatars1.githubusercontent.com/u/1894191?v=3&s=70)](https://github.com/brenopolanski) | [![Jeanderson B. Candido](https://avatars3.githubusercontent.com/u/2225536?v=3&s=70)](https://github.com/jeandersonbc) | [![Rafael Lima](https://avatars3.githubusercontent.com/u/7543763?v=3&s=70)](https://github.com/raafaelima) | [![Saulo S. Toledo](https://avatars2.githubusercontent.com/u/5031156?v=3&s=70)](https://github.com/saulotoledo) 
+--- | --- | --- | --- | --- | --- | --- |
+[Adriel Café](https://github.com/adrielcafe) | [Breno Polanski](https://github.com/brenopolanski) | [Jeanderson B. Candido](https://github.com/jeandersonbc) | [Rafael Lima](https://github.com/raafaelima) | [Saulo S. Toledo](https://github.com/saulotoledo) |
 
 ## Credits
 
