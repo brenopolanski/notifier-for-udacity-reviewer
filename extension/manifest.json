@@ -9,8 +9,8 @@
   "background": {
     "persistent": false,
     "scripts": [
-      "api.js",
-      "main.js"
+      "scripts/api.js",
+      "scripts/main.js"
     ]
   },
   "permissions": [

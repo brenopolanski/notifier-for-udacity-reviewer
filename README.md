@@ -1,6 +1,6 @@
 # Notifier for Udacity Reviewer
 
-> :loudspeaker: Notifier for Udacity Reviewer - Extension for modern browsers
+> Notifier for Udacity Reviewer - Extension for modern browsers
 
 Displays projects for review.
 
