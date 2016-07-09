@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "package": "npm run package:blink && npm run package:gecko",
+    "package:blink": "cd extension && zip -r ../notifier-for-udacity-reviewer.zip * && cd ..",
+    "package:gecko": "cd extension && zip -r ../notifier-for-udacity-reviewer.xpi * && cd .."
+  }
+}

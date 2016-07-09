@@ -47,7 +47,7 @@ This browser extension available for:
 
 *Coming soon*
 
-## Languages for review
+## Languages for Review
 
 * :cn: Chinese
 * :uk: English

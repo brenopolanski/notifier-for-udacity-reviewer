@@ -5,7 +5,6 @@
   "homepage_url": "https://github.com/brenopolanski/notifier-for-udacity-reviewer",
   "manifest_version": 2,
   "minimum_chrome_version": "46",
-  "options_page": "options.html",
   "background": {
     "persistent": false,
     "scripts": [
