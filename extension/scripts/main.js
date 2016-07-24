@@ -5,12 +5,11 @@
     success: [65, 131, 196, 255],
     danger: [166, 41, 41, 255]
   };
-
-  var RING = new Audio('sounds/ring.ogg');
+  var ring = new Audio('sounds/ring.ogg');
 
   function loadRing() {
-    // RING.onload = function() {};
-    RING.load();
+    // ring.onload = function() {};
+    ring.load();
   }
 
   function render(text, color, title) {
@@ -36,7 +35,26 @@
     return String(count);
   }
 
+  function parseStringToNumber(interval) {
+    if (interval > 60) {
+      interval = ((interval / 60) / 1000);
+    }
+
+    if (!isNaN(interval) && interval.toString().indexOf('.') !== -1) {
+      // TODO: Alarm period is less than minimum of 1 minutes.
+      // In released `.crx`, alarm "" will fire approximately every 1 minutes.
+      return parseFloat(interval);
+    }
+    else {
+      return parseInt(interval);
+    }
+  }
+
   function update() {
+    var interval = window.Udacity.settings.get('interval');
+
+    chrome.alarms.create({ periodInMinutes: parseStringToNumber(interval) });
+
     window.udacityNotifyReviewer(function(data) {
       if (typeof data === 'number') {
         var opt = {
@@ -50,7 +68,7 @@
           notification(opt);
 
           if (window.Udacity.settings.get('showDesktopRing')) {
-            RING.play();
+            ring.play();
           }
         }
 
@@ -62,7 +80,6 @@
     });
   }
 
-  chrome.alarms.create({ periodInMinutes: parseInt(window.Udacity.settings.get('interval')) });
   chrome.alarms.onAlarm.addListener(update);
   chrome.runtime.onMessage.addListener(update);
 
