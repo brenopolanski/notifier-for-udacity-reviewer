@@ -42,7 +42,7 @@
         var opt = {
           type: 'basic',
           title: 'Udacity Project Reviewer',
-          message: 'You Have ' + handleCount(data) + ' Projects available for review!',
+          message: `You Have ${handleCount(data)} Projects available for review!`,
           iconUrl: 'images/icon-128.png'
         };
 

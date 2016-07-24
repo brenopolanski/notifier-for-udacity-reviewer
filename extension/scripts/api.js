@@ -68,7 +68,7 @@
       languages = languages.split(',');
     }
 
-    xhr('GET', rootUrl + 'certifications.json', function(data) {
+    xhr('GET', `${rootUrl}certifications.json`, function(data) {
       var certifications = JSON.parse(data);
       var reviewAwaiting = 0;
 

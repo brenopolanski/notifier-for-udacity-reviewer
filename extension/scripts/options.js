@@ -65,7 +65,7 @@
     function normalizeRoot(url) {
       if (!/^https?:\/\//.test(url)) {
         // Assume it is https
-        url = 'https://' + url;
+        url = `https://${url}`;
       }
 
       if (!/\/$/.test(url)) {
