@@ -5,8 +5,9 @@
     var defaults = {
       rootUrl: 'https://review-api.udacity.com/api/v1/me/',
       oauthToken: '',
-      languages: ['pt-br', 'en-us'], // zh-cn
       interval: 1, // Minute,
+      languages: ['pt-br', 'en-us'], // zh-cn
+      checkProject: false,
       showDesktopNotif: false,
       showDesktopRing: false
     };
@@ -63,12 +64,13 @@
   window.udacityNotifyReviewer = function(callback) {
     var rootUrl = window.Udacity.settings.get('rootUrl');
     var languages = window.Udacity.settings.get('languages');
+    var checkProject = window.Udacity.settings.get('checkProject');
 
     if (typeof languages === 'string') {
       languages = languages.split(',');
     }
 
-    xhr('GET', `${rootUrl}certifications.json`, function(data) {
+    xhr('GET', `${rootUrl}me/certifications.json`, function(data) {
       var certifications = JSON.parse(data);
       var reviewAwaiting = 0;
 
@@ -77,10 +79,15 @@
           // Check if is certified (required to review projects)
           if (certification.certified_at) {
             var languageReviewsCount = certification.project.awaiting_review_count_by_language;
+            var projectId = certification.project.id;
 
             if (languageReviewsCount) {
               languages.map(function(language) {
                 if (language in languageReviewsCount) {
+                  if (checkProject) {
+                    xhr('POST', `${rootUrl}projects/${projectId}/submissions/assign.json`);
+                  }
+
                   reviewAwaiting += languageReviewsCount[language];
                 }
               });

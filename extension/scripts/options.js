@@ -6,6 +6,7 @@
     var formOauthToken = document.getElementById('oauth-token');
     var formCheckIntervals = document.getElementById('check-intervals');
     var formLanguages = document.getElementById('languages');
+    var formCheckProject = document.getElementById('check-project');
     var formShowDesktopNotif = document.getElementById('show-desktop-notif');
     var formShowDesktopRing = document.getElementById('show-desktop-ring');
 
@@ -105,6 +106,11 @@
       window.Udacity.settings.set('languages', languages);
       updateBadge();
       setSelectValues(languages);
+    });
+
+    formCheckProject.addEventListener('change', function() {
+      window.Udacity.settings.set('checkProject', formCheckProject.checked);
+      updateBadge();
     });
 
     formShowDesktopNotif.addEventListener('change', function() {
