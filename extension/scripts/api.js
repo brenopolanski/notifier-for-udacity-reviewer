@@ -61,8 +61,8 @@
 
   window.udacityNotifyReviewer = callback => {
     const rootUrl = window.Udacity.settings.get('rootUrl');
-    let languages = window.Udacity.settings.get('languages');
     const checkProject = window.Udacity.settings.get('checkProject');
+    let languages = window.Udacity.settings.get('languages');
 
     if (typeof languages === 'string') {
       languages = languages.split(',');

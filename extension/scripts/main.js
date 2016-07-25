@@ -6,7 +6,6 @@
   const ring = new Audio('sounds/ring.ogg');
 
   function loadRing() {
-    // ring.onload = function() {};
     ring.load();
   }
 
