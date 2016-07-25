@@ -6,7 +6,7 @@ Displays projects for review.
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/brenopolanski/notifier-for-udacity-reviewer/master/demo1.png" />
-	<img src="https://raw.githubusercontent.com/brenopolanski/notifier-for-udacity-reviewer/master/demo2.png" />
+	<img src="https://raw.githubusercontent.com/brenopolanski/notifier-for-udacity-reviewer/master/demo2.gif" />
 </p>
 
 ## Desktop notifications
