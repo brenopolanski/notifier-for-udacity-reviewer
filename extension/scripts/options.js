@@ -45,6 +45,7 @@
       formRootUrl.value = window.Udacity.settings.get('rootUrl');
       formOauthToken.value = window.Udacity.settings.get('oauthToken');
       formCheckIntervals.value = window.Udacity.settings.get('interval');
+      formCheckProject.checked = window.Udacity.settings.get('checkProject');
       formShowDesktopNotif.checked = window.Udacity.settings.get('showDesktopNotif');
       formShowDesktopRing.checked = window.Udacity.settings.get('showDesktopRing');
 
