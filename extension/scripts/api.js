@@ -1,8 +1,6 @@
-(function() {
-  'use strict';
-
-  window.Udacity = function() {
-    var defaults = {
+(() => {
+  window.Udacity = (() => {
+    const defaults = {
       rootUrl: 'https://review-api.udacity.com/api/v1/me/',
       oauthToken: '',
       interval: 1, // Minute,
@@ -12,10 +10,10 @@
       showDesktopRing: false
     };
 
-    var api = {
+    const api = {
       settings: {
-        get: function(name) {
-          var item = localStorage.getItem(name);
+        get(name) {
+          const item = localStorage.getItem(name);
 
           if (item === null) {
             return {}.hasOwnProperty.call(defaults, name) ? defaults[name] : undefined;
@@ -36,16 +34,16 @@
     api.defaults = defaults;
 
     return api;
-  }();
+  })();
 
-  var xhr = function() {
-    var xhr = new XMLHttpRequest();
-    var token = window.Udacity.settings.get('oauthToken');
+  const xhr = (() => {
+    const xhr = new XMLHttpRequest();
+    let token = window.Udacity.settings.get('oauthToken');
 
-    return function(method, url, doneCallback, incompleteCallback) {
+    return (method, url, doneCallback, incompleteCallback) => {
       token = window.Udacity.settings.get('oauthToken');
 
-      xhr.onreadystatechange = function() {
+      xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
           doneCallback(xhr.responseText);
         }
@@ -59,30 +57,30 @@
       xhr.setRequestHeader('Authorization', token);
       xhr.send();
     };
-  }();
+  })();
 
-  window.udacityNotifyReviewer = function(callback) {
-    var rootUrl = window.Udacity.settings.get('rootUrl');
-    var languages = window.Udacity.settings.get('languages');
-    var checkProject = window.Udacity.settings.get('checkProject');
+  window.udacityNotifyReviewer = callback => {
+    const rootUrl = window.Udacity.settings.get('rootUrl');
+    let languages = window.Udacity.settings.get('languages');
+    const checkProject = window.Udacity.settings.get('checkProject');
 
     if (typeof languages === 'string') {
       languages = languages.split(',');
     }
 
-    xhr('GET', `${rootUrl}me/certifications.json`, function(data) {
-      var certifications = JSON.parse(data);
-      var reviewAwaiting = 0;
+    xhr('GET', `${rootUrl}me/certifications.json`, data => {
+      const certifications = JSON.parse(data);
+      let reviewAwaiting = 0;
 
       if (!certifications.hasOwnProperty('error')) {
-        certifications.map(function(certification) {
+        certifications.map(certification => {
           // Check if is certified (required to review projects)
           if (certification.certified_at) {
-            var languageReviewsCount = certification.project.awaiting_review_count_by_language;
-            var projectId = certification.project.id;
+            const languageReviewsCount = certification.project.awaiting_review_count_by_language;
+            const projectId = certification.project.id;
 
             if (languageReviewsCount) {
-              languages.map(function(language) {
+              languages.map(language => {
                 if (language in languageReviewsCount) {
                   if (checkProject) {
                     xhr('POST', `${rootUrl}projects/${projectId}/submissions/assign.json`);

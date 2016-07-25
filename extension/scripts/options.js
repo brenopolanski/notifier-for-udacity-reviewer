@@ -1,22 +1,20 @@
-(function() {
-  'use strict';
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var formRootUrl = document.getElementById('root-url');
-    var formOauthToken = document.getElementById('oauth-token');
-    var formCheckIntervals = document.getElementById('check-intervals');
-    var formLanguages = document.getElementById('languages');
-    var formCheckProject = document.getElementById('check-project');
-    var formShowDesktopNotif = document.getElementById('show-desktop-notif');
-    var formShowDesktopRing = document.getElementById('show-desktop-ring');
+(() => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const formRootUrl = document.getElementById('root-url');
+    const formOauthToken = document.getElementById('oauth-token');
+    const formCheckIntervals = document.getElementById('check-intervals');
+    const formLanguages = document.getElementById('languages');
+    const formCheckProject = document.getElementById('check-project');
+    const formShowDesktopNotif = document.getElementById('show-desktop-notif');
+    const formShowDesktopRing = document.getElementById('show-desktop-ring');
 
     function getSelectValues(select) {
-      var options = select && select.options;
-      var len = options.length;
-      var result = [];
-      var opt;
+      const options = select && select.options;
+      const len = options.length;
+      const result = [];
+      let opt;
 
-      for (var i = 0; i < len; i++) {
+      for (let i = 0; i < len; i++) {
         opt = options[i];
 
         if (opt.selected) {
@@ -32,8 +30,8 @@
         data = data.split(',');
       }
 
-      for (var i = 0, iLen = data.length; i < iLen; i++ ) {
-        for (var j = 0, jLen = formLanguages.options.length; j < jLen; j++) {
+      for (let i = 0, iLen = data.length; i < iLen; i++ ) {
+        for (let j = 0, jLen = formLanguages.options.length; j < jLen; j++) {
           if (formLanguages.options[j].value === data[i]) {
             formLanguages.options[j].selected = true;
           }
@@ -77,8 +75,8 @@
       return url;
     }
 
-    formRootUrl.addEventListener('change', function() {
-      var url = normalizeRoot(formRootUrl.value);
+    formRootUrl.addEventListener('change', () => {
+      let url = normalizeRoot(formRootUrl.value);
 
       // Case of url is empty: set to default
       if (url === normalizeRoot('')) {
@@ -91,35 +89,35 @@
       loadSettings();
     });
 
-    formOauthToken.addEventListener('change', function() {
+    formOauthToken.addEventListener('change', () => {
       window.Udacity.settings.set('oauthToken', formOauthToken.value);
       updateBadge();
     });
 
-    formCheckIntervals.addEventListener('change', function() {
+    formCheckIntervals.addEventListener('change', () => {
       window.Udacity.settings.set('interval', formCheckIntervals.value);
       updateBadge();
     });
 
-    formLanguages.addEventListener('change', function() {
-      var languages = getSelectValues(formLanguages);
+    formLanguages.addEventListener('change', () => {
+      const languages = getSelectValues(formLanguages);
 
       window.Udacity.settings.set('languages', languages);
       updateBadge();
       setSelectValues(languages);
     });
 
-    formCheckProject.addEventListener('change', function() {
+    formCheckProject.addEventListener('change', () => {
       window.Udacity.settings.set('checkProject', formCheckProject.checked);
       updateBadge();
     });
 
-    formShowDesktopNotif.addEventListener('change', function() {
+    formShowDesktopNotif.addEventListener('change', () => {
       window.Udacity.settings.set('showDesktopNotif', formShowDesktopNotif.checked);
       updateBadge();
     });
 
-    formShowDesktopRing.addEventListener('change', function() {
+    formShowDesktopRing.addEventListener('change', () => {
       window.Udacity.settings.set('showDesktopRing', formShowDesktopRing.checked);
       updateBadge();
     });

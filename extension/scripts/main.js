@@ -1,11 +1,9 @@
-(function() {
-  'use strict';
-
-  var COLORS = {
+(() => {
+  const COLORS = {
     success: [65, 131, 196, 255],
     danger: [166, 41, 41, 255]
   };
-  var ring = new Audio('sounds/ring.ogg');
+  const ring = new Audio('sounds/ring.ogg');
 
   function loadRing() {
     // ring.onload = function() {};
@@ -51,13 +49,13 @@
   }
 
   function update() {
-    var interval = window.Udacity.settings.get('interval');
+    const interval = window.Udacity.settings.get('interval');
 
     chrome.alarms.create({ periodInMinutes: parseStringToNumber(interval) });
 
-    window.udacityNotifyReviewer(function(data) {
+    window.udacityNotifyReviewer(data => {
       if (typeof data === 'number') {
-        var opt = {
+        const opt = {
           type: 'basic',
           title: 'Udacity Project Reviewer',
           message: `You have ${handleCount(data)} ${data === 1 ? 'project' : 'projects'} available for review!`,
@@ -84,13 +82,13 @@
   chrome.runtime.onMessage.addListener(update);
 
   // Launch options page on first run
-  chrome.runtime.onInstalled.addListener(function (details) {
+  chrome.runtime.onInstalled.addListener(details => {
     if (details.reason === 'install') {
       chrome.runtime.openOptionsPage();
     }
   });
 
-  chrome.browserAction.onClicked.addListener(function() {
+  chrome.browserAction.onClicked.addListener(() => {
     chrome.tabs.create({
       url: 'https://review.udacity.com/#!/submissions/dashboard'
     });
