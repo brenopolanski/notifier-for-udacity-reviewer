@@ -1,7 +1,7 @@
 (() => {
   window.Udacity = (() => {
     const defaults = {
-      rootUrl: 'https://review-api.udacity.com/api/v1/me/',
+      rootUrl: 'https://review-api.udacity.com/api/v1/',
       oauthToken: '',
       interval: 1, // Minute,
       languages: ['pt-br', 'en-us'], // zh-cn
