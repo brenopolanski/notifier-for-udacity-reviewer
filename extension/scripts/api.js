@@ -47,6 +47,12 @@
         if (xhr.readyState === 4 && xhr.status === 200) {
           doneCallback(xhr.responseText);
         }
+        else if (xhr.status >= 400) {
+          doneCallback(xhr.responseText);
+        }
+        else if (xhr.status >= 500) {
+          doneCallback(xhr.responseText);
+        }
         else {
           if (typeof incompleteCallback === 'function') {
             incompleteCallback(xhr.responseText);
