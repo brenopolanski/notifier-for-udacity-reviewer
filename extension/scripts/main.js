@@ -1,5 +1,6 @@
 (() => {
-  const COLORS = {
+  const tabUrl = 'https://review.udacity.com/#!/submissions/dashboard';
+  const colors = {
     success: [65, 131, 196, 255],
     danger: [166, 41, 41, 255]
   };
@@ -18,6 +19,11 @@
   function notification(opt) {
     if (window.Udacity.settings.get('showDesktopNotif')) {
       chrome.notifications.create(opt);
+      chrome.notifications.onClicked.addListener(() => {
+        chrome.tabs.create({
+          url: tabUrl
+        });
+      });
     }
   }
 
@@ -69,10 +75,10 @@
           }
         }
 
-        render(handleCount(data), COLORS.success, 'Projects available for review');
+        render(handleCount(data), colors.success, 'Projects available for review');
       }
       else {
-        render(':(', COLORS.danger, data);
+        render(':(', colors.danger, data);
       }
     });
   }
@@ -89,11 +95,10 @@
 
   chrome.browserAction.onClicked.addListener(() => {
     chrome.tabs.create({
-      url: 'https://review.udacity.com/#!/submissions/dashboard'
+      url: tabUrl
     });
   });
 
   loadRing();
-
   update();
 })();
