@@ -15,6 +15,10 @@ Displays projects for review.
 
 The extension checks for new notifications every minute, and displays notifications that arrived after the last check if there are any. Clicking on the notification opens it on [Udacity Dashboard](https://review.udacity.com/#!/submissions/dashboard).
 
+### :heart: Found this project useful?
+
+If you found this project useful, then please consider giving it a :star: on Github and sharing it with your friends via social media.
+
 ## Install
 
 This browser extension available for:
@@ -43,7 +47,7 @@ This browser extension available for:
 
 ## Contributing
 
-If you want to help, please read the [Contributing](https://github.com/brenopolanski/notifier-for-udacity-reviewer/blob/master/CONTRIBUTING.md) guide.
+If you want to help, please read the [Contributing](https://github.com/brenopolanski/notifier-for-udacity-reviewer/blob/master/.github/CONTRIBUTING.md) guide.
 
 ## History
 
@@ -62,6 +66,12 @@ This extension was made with love by these guys and a bunch of awesome [contribu
 * [Udacity Reviews API](https://review.udacity.com/api-doc/index.html)
 * [Iconfinder](https://www.iconfinder.com/icons/309036/education_student_study_icon)
 * [KDE oxygen sounds](https://github.com/KDE/oxygen/tree/master/sounds)
+
+## Donations
+
+Donations would be more than welcome :)
+
+[![donate-paypal](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/btn_donate_paypal.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WNXA4YYGQCJZG)
 
 ## License
 
