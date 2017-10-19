@@ -1,4 +1,4 @@
-# Notifier for Udacity Reviewer
+# <img src="extension/images/icon-128.png" width="45" align="left"> Notifier for Udacity Reviewer
 
 > Notifier for Udacity Reviewer - Extension for modern browsers
 
@@ -19,9 +19,9 @@ The extension checks for new notifications every minute, and displays notificati
 
 This browser extension available for:
 
-| <a href="https://chrome.google.com/webstore/detail/notifier-for-udacity-revi/amopngmbcmcacbfgmbjdkhkjjojbodba"><img src="https://camo.githubusercontent.com/3bfe3f8c64cf4e968b3d45f587c291853a1b8035/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f6368726f6d652f6368726f6d655f34387834382e706e67" width="48px" height="48px" alt="Chrome logo"></a> | <a href="#"><img src="https://camo.githubusercontent.com/0a3d07e334548501ef5b7c20a75fc1a4e9457566/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f66697265666f782f66697265666f785f34387834382e706e67" width="48px" height="48px" alt="Firefox logo"></a> | <a href="#"><img src="https://camo.githubusercontent.com/ef1c2ea75ec9ec27156ec690f03b8b44e9c0e996/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f6f706572612f6f706572615f34387834382e706e67" width="48px" height="48px" alt="Opera logo"></a> | <a href="#"><img src="https://camo.githubusercontent.com/7e8c82eab10c4686d5d94a5875ba436750ac33d7/68747470733a2f2f7261772e6769746875622e636f6d2f616c7272612f62726f777365722d6c6f676f732f6d61737465722f7361666172692f7361666172695f34387834382e706e67" width="48px" height="48px" alt="Safari logo"></a> |
+| <a href="https://chrome.google.com/webstore/detail/notifier-for-udacity-revi/amopngmbcmcacbfgmbjdkhkjjojbodba"><img src="https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome logo"></a> | <a href="#"><img src="https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox logo"></a> | <a href="#"><img src="https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera logo"></a> | <a href="#"><img src="https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari logo"></a> |
 |:---:|:---:|:---:|:---:|
-| [Chrome](https://chrome.google.com/webstore/detail/notifier-for-udacity-revi/amopngmbcmcacbfgmbjdkhkjjojbodba) | Firefox | Opera | Safari |
+| [Chrome](https://chrome.google.com/webstore/detail/notifier-for-udacity-revi/amopngmbcmcacbfgmbjdkhkjjojbodba) ✔ | Firefox ✘ | Opera ✘ | Safari ✘ |
 
 ## Testing
 
@@ -35,23 +35,11 @@ This browser extension available for:
 
 4. Select the `extension` folder
 
-###### Firefox
-
-*Coming soon*
-
-###### Opera
-
-*Coming soon*
-
-###### Safari
-
-*Coming soon*
-
 ## Languages for Review
 
 * :cn: Chinese
-* :uk: English
-* Portuguese (pt-BR)
+* :us: English
+* :brazil: Portuguese (pt-BR)
 
 ## Contributing
 
@@ -65,9 +53,9 @@ For detailed changelog, see [Releases](https://github.com/brenopolanski/notifier
 
 This extension was made with love by these guys and a bunch of awesome [contributors](https://github.com/brenopolanski/notifier-for-udacity-reviewer/graphs/contributors).
 
-[![Adriel Café](https://avatars0.githubusercontent.com/u/2512298?v=3&s=70)](https://github.com/adrielcafe) | [![Breno Polanski](https://avatars1.githubusercontent.com/u/1894191?v=3&s=70)](https://github.com/brenopolanski) | [![Jeanderson B. Candido](https://avatars3.githubusercontent.com/u/2225536?v=3&s=70)](https://github.com/jeandersonbc) | [![Rafael Lima](https://avatars3.githubusercontent.com/u/7543763?v=3&s=70)](https://github.com/raafaelima) | [![Saulo S. Toledo](https://avatars2.githubusercontent.com/u/5031156?v=3&s=70)](https://github.com/saulotoledo)
---- | --- | --- | --- | --- | --- | --- |
-[Adriel Café](https://github.com/adrielcafe) | [Breno Polanski](https://github.com/brenopolanski) | [Jeanderson B. Candido](https://github.com/jeandersonbc) | [Rafael Lima](https://github.com/raafaelima) | [Saulo S. Toledo](https://github.com/saulotoledo) |
+| [![Adriel Café](https://avatars0.githubusercontent.com/u/2512298?v=3&s=70)](https://github.com/adrielcafe) | [![Breno Polanski](https://avatars1.githubusercontent.com/u/1894191?v=3&s=70)](https://github.com/brenopolanski) | [![Jeanderson B. Candido](https://avatars3.githubusercontent.com/u/2225536?v=3&s=70)](https://github.com/jeandersonbc) | [![Rafael Lima](https://avatars3.githubusercontent.com/u/7543763?v=3&s=70)](https://github.com/raafaelima) | [![Saulo S. Toledo](https://avatars2.githubusercontent.com/u/5031156?v=3&s=70)](https://github.com/saulotoledo) |
+|---|---|---|---|---|
+| [Adriel Café](https://github.com/adrielcafe) | [Breno Polanski](https://github.com/brenopolanski) | [Jeanderson B. Candido](https://github.com/jeandersonbc) | [Rafael Lima](https://github.com/raafaelima) | [Saulo S. Toledo](https://github.com/saulotoledo) |
 
 ## Credits
 
