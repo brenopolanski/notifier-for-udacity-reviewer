@@ -1,6 +1,6 @@
 {
   "name": "Notifier for Udacity Reviewer",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Displays projects for review",
   "homepage_url": "https://github.com/brenopolanski/notifier-for-udacity-reviewer",
   "manifest_version": 2,
