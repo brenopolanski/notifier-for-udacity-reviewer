@@ -67,7 +67,7 @@ This extension was made with love by these guys and a bunch of awesome [contribu
 * [Iconfinder](https://www.iconfinder.com/icons/309036/education_student_study_icon)
 * [KDE oxygen sounds](https://github.com/KDE/oxygen/tree/master/sounds)
 
-## More Tools for Project Reviewers
+## More Tools for Udacity Reviewers
 
 - [Tips and Tricks for Udacity Reviewer](https://github.com/brenopolanski/tips-tricks-for-udacity-reviewer)
 - [Get Udacity Projects](https://github.com/brenopolanski/get-udacity-projects)
