@@ -47,7 +47,7 @@ This browser extension available for:
 
 ## Contributing
 
-If you want to help, please read the [Contributing](https://github.com/brenopolanski/notifier-for-udacity-reviewer/blob/master/.github/CONTRIBUTING.md) guide.
+If you want to help, please read the [Contributing](https://github.com/brenopolanski/notifier-for-udacity-reviewer/blob/master/CONTRIBUTING.md) guide.
 
 ## History
 
