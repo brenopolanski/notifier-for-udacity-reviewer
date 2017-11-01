@@ -73,6 +73,12 @@ Donations would be more than welcome :)
 
 [![donate-paypal](https://raw.githubusercontent.com/brenopolanski/phaser-es6-starter/gh-assets/btn_donate_paypal.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WNXA4YYGQCJZG)
 
+## More Tools for Project Reviewers
+
+- [Tips and Tricks for Udacity Reviewer](https://github.com/brenopolanski/tips-tricks-for-udacity-reviewer)
+- [Get Udacity Projects](https://github.com/brenopolanski/get-udacity-projects)
+- [urcli](https://github.com/trolster/urcli)
+
 ## License
 
 [MIT License](http://brenopolanski.mit-license.org/) © Breno Polanski
