@@ -1,5 +1,5 @@
 (() => {
-  const tabUrl = 'https://review.udacity.com/#!/submissions/dashboard';
+  const tabUrl = 'https://mentor-dashboard.udacity.com/reviews/overview';
   const colors = {
     success: [65, 131, 196, 255],
     danger: [166, 41, 41, 255]
