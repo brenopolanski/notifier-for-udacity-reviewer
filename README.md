@@ -2,6 +2,10 @@
 
 > Notifier for Udacity Reviewer - Extension for modern browsers
 
+---
+
+**IMPORTANT NOTICE:** The API is going to be shut down and the `extension` will become inactive in the following months. You should no longer use the `extension` alongside any official Udacity mentor dashboard features.
+
 Displays projects for review.
 
 <p align="center">
