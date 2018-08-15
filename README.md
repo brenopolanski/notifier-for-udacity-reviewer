@@ -4,7 +4,7 @@
 
 ---
 
-:warning: **IMPORTANT NOTICE:** The API is going to be shut down and the `extension` will become inactive in the following months. You should no longer use the `extension` alongside any official Udacity mentor dashboard features.
+:warning: **IMPORTANT NOTICE:** The Udacity Reviews API has been shut down. The `extension` no longer works. Thanks to everyone who contributed with code and ideas!
 
 ---
 
